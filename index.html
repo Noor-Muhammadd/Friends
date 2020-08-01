@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>Page Title</title> 
+  <link rel="stylesheet" type="text/css" href="style.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <h1 class="hfd"> Happy friendship Day </h1> 
+  <br> 
+  <br> 
+  <h1 id="name" class="friend"> </h1> 
+  <br> 
+  <h1 id="greet" class="time"></h1> 
+  <br> 
+  <br> 
+  <script>
+        let name;
+        do{
+            name = prompt("Enter your name below");
+        }while(name == '' || name == null || name == undefined);
+        document.getElementById("name").innerHTML = name;
+        var countDownDate = new Date("Aug 1, 2020 23:59:59").getTime();
+        var x = setInterval(function(){
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days= Math.floor(distance / (1000 * 60 * 60 *24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 *24)) / (1000 * 60 *60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById("greet").innerHTML = days + " days<br>" + hours + " hours<br> " + minutes + " minutes<br> " + seconds + " seconds\n ";
+        }, 1000);
+        </script>  
+  <footer> 
+   <p class="programminghero">Learned and developed this site with <a href="http://www.programming-hero.com">Programming Hero</a></p> 
+  </footer>
+ </body>
+</html>
